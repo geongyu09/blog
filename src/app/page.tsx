@@ -1,9 +1,14 @@
-import LayoutWrapper from '@/components/common/layout/LayoutWrapper';
+import Container from '@/components/common/layout/Container';
+import MonitoringSection from '@/components/feature/Home/MonitoringSection';
+import Posts from '@/components/feature/Home/Posts';
 
 export default function Home() {
   return (
-    <LayoutWrapper>
-      <h1>Home</h1>
-    </LayoutWrapper>
+    <main>
+      <Container>
+        <MonitoringSection />
+        <Posts />
+      </Container>
+    </main>
   );
 }
