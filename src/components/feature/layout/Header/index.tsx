@@ -1,9 +1,9 @@
-import LayoutWrapper from '@/components/common/layout/LayoutWrapper';
+import Container from '@/components/common/layout/Container';
 import Link from 'next/link';
 
 export default function Header() {
   return (
-    <LayoutWrapper>
+    <Container>
       <header className="border-b-2 py-4 text-2xl flex justify-between">
         <h1>Geongyu</h1>
 
@@ -18,6 +18,6 @@ export default function Header() {
           </ul>
         </nav>
       </header>
-    </LayoutWrapper>
+    </Container>
   );
 }
