@@ -7,5 +7,6 @@ export interface Post {
 export interface PostData {
   title: string;
   date: string;
+  description: string;
   thumbnail: string;
 }

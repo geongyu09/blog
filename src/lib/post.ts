@@ -18,6 +18,10 @@ export function getPostBySlug(slug: string) {
   return { data, slug: realSlug, content } as Post;
 }
 
+/**
+ * @description 모든 포스트를 반환합니다.
+ * @returns Post[]
+ */
 export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs

@@ -1,13 +1,13 @@
 import Container from '@/components/common/layout/Container';
-import MonitoringSection from '@/components/feature/Home/MonitoringSection';
-import Posts from '@/components/feature/Home/Posts';
+import Banner from '@/components/feature/Home/HomeBanner';
+import MonitoringEmbedSection from '@/components/feature/Home/MonitoringEmbedSection';
 
 export default function Home() {
   return (
     <main>
+      <Banner />
       <Container>
-        <MonitoringSection />
-        <Posts />
+        <MonitoringEmbedSection />
       </Container>
     </main>
   );
