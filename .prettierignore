@@ -1,0 +1,7 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+_posts/
+**/._posts
+**/._posts/
