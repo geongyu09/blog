@@ -13,7 +13,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
     <html lang="ko">
       <body>
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

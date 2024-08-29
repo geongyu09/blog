@@ -4,13 +4,13 @@ import Gap from '../../layout/Gap';
 
 interface PostItemProps {
   title: string;
-  content: string;
+  description: string;
   date: string;
   href: string;
   image?: string;
 }
 export default function PostItem({
-  content,
+  description,
   date,
   href,
   title,
@@ -31,7 +31,7 @@ export default function PostItem({
         <div className="p-4 bg-white">
           <h4 className="text-xl font-bold">{title}</h4>
           <Gap size={2} />
-          <p>{content}</p>
+          <p>{description}</p>
           <Gap size={12} />
           <div className="flex justify-between">
             <span className="opacity-70">{date}</span>
