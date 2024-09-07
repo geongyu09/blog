@@ -7,7 +7,7 @@ import Posts from '@/components/feature/Home/Posts';
 
 export default function Home() {
   return (
-    <main className="">
+    <>
       <Banner />
       <Gap size={12} />
       <Container>
@@ -15,6 +15,6 @@ export default function Home() {
         <Gap size={12} />
         <Posts />
       </Container>
-    </main>
+    </>
   );
 }
