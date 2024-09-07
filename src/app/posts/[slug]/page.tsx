@@ -41,7 +41,7 @@ export default function Page({ params: { slug } }: PageProps) {
 
         <Gap size={4} />
         <MarkdownNav markdown={content} />
-        <MakrdownVidwer>{content}</MakrdownVidwer>
+        <MakrdownVidwer markdown={content} />
       </Wrapper>
     </Container>
   );

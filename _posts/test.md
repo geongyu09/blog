@@ -80,7 +80,7 @@ https://www.behance.net/gallery/114734803/Registration-form-UI-Design
 
 ## 레퍼런스
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1795116a-ce2d-4be1-973a-4ff27a9d056b/a130bc21-faff-4104-b23f-f1f2e5a05a1e/Untitled.png)
+![Untitled](/assets/blog/test/testThumb.jpg)
 
 벨로그처럼 글을 md 형식으로 작성하고, 이를 모아볼 수 있으면 좋을 것 같다.
 

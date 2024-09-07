@@ -1,4 +1,3 @@
-import { PropsWithChildren } from 'react';
 import remarkGfm from 'remark-gfm';
 import Markdown from 'react-markdown';
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -24,10 +23,10 @@ function code(props: any) {
   );
 }
 
-interface MarkdownProps extends PropsWithChildren<{}> {
-  children: string;
+interface MarkdownProps {
+  markdown: string;
 }
-export default function MarkdownViewer({ children }: MarkdownProps) {
+export default function MarkdownViewer({ markdown }: MarkdownProps) {
   return (
     <Markdown
       className="typhography"
@@ -36,7 +35,7 @@ export default function MarkdownViewer({ children }: MarkdownProps) {
         code,
       }}
     >
-      {children}
+      {markdown}
     </Markdown>
   );
 }
