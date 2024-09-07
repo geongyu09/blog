@@ -1,8 +1,7 @@
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
-// import SplitLayout from '@/components/common/layout/SplitLayout';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
-import MarkdownNav from '@/lib/MarkdownNav';
+import MarkdownNav from '@/components/common/lib/MarkdownNav';
 import { getPostBySlug } from '@/lib/post';
 import MarkdownViewer from '@/service/Markdown';
 

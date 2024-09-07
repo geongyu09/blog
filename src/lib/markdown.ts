@@ -13,7 +13,6 @@ export function parseMarkdown(markdown: string) {
       if (level > 0) headers.push({ text, level });
     }
   });
-  console.log(headers);
 
   return headers;
 }
