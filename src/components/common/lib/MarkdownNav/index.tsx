@@ -17,7 +17,7 @@ export default function MarkdownNav({ markdown }: MarkdownNavProps) {
 
       <Gap size={2} />
 
-      <div className="px-2 flex flex-col gap-3">
+      <div className="px-2 flex flex-col gap-1">
         {headers.map(({ text, level }, index) => (
           <Link
             key={`${text}-${level}-${index * 2}`}
