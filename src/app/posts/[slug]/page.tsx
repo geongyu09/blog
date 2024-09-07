@@ -4,7 +4,7 @@ import Gap from '@/components/common/layout/Gap';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
 import MarkdownNav from '@/lib/MarkdownNav';
 import { getPostBySlug } from '@/lib/post';
-import MakrdownVidwer from '@/service/Markdown';
+import MarkdownViewer from '@/service/Markdown';
 
 interface PageProps {
   params: {
@@ -41,7 +41,7 @@ export default function Page({ params: { slug } }: PageProps) {
 
         <Gap size={4} />
         <MarkdownNav markdown={content} />
-        <MakrdownVidwer markdown={content} />
+        <MarkdownViewer markdown={content} />
       </Wrapper>
     </Container>
   );
