@@ -84,13 +84,13 @@ https://www.behance.net/gallery/114734803/Registration-form-UI-Design
 
 벨로그처럼 글을 md 형식으로 작성하고, 이를 모아볼 수 있으면 좋을 것 같다.
 
-![Aug-04-2024 14-22-29.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/1795116a-ce2d-4be1-973a-4ff27a9d056b/56eb4e55-e86c-4ede-aef7-76dbeffec252/Aug-04-2024_14-22-29.gif)
+![Aug-04-2024 14-22-29.gif](/assets/blog/test/testThumb.jpg)
 
 내가 참여한 프로젝트에 대해서도 econovation 홈페이지처럼 모아볼 수 있으면 좋을 것 같다.
 
 일지에 대해서는 타 포스트들과 겹칠 수 있으므로, 이를 단순히 포스트들을 아카이빙 할 수 있는 느낌이면 좋을 것 같다. 특히나 일지이다보니 날짜와의 연관성이 많이 존재한다. 한 눈에 볼 수 있는 깃허브의 잔디와 같은 도구들로부터 아이디어를 얻을 수 있을 것 같았다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1795116a-ce2d-4be1-973a-4ff27a9d056b/3cb79678-ee5b-492f-95f9-fccefe04f317/Untitled.png)
+![Untitled](/assets/blog/test/testThumb.jpg)
 
 카테고리를 누르면 해당 카테고리가 작성된 날짜만 잔디가 보여지고, 특정 날짜 클릭시 해당 날짜에 작성된 포스트를 볼 수 있도록 하고자 한다. 어쩌면 검색 페이지를 대신할 수도 있겠다는 생각이 든다.
 

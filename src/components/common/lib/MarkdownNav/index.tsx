@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from '@/utils/cn';
 import Link from 'next/link';
-import { parseMarkdown } from '../../../../lib/markdown';
-import Gap from '../../layout/Gap';
+import { parseMarkdown } from '@/lib/markdown';
+import Gap from '@/components/common/layout/Gap';
 
 interface MarkdownNavProps {
   markdown: string;
