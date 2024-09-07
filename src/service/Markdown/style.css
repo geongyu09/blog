@@ -57,17 +57,21 @@
   @apply text-lg;
 }
 
-.typhography code {
-  @apply bg-slate-100 p-1 rounded-md text-sm;
-}
+/* .typhography code {
+  @apply bg-gray-100 p-1 rounded-md text-sm;
+} */
 
 .typhography pre {
-  @apply bg-slate-200 p-4 my-4 rounded-lg;
+  @apply my-4 rounded-lg overflow-hidden;
 }
 
-.typhography pre code {
-  @apply bg-slate-200 rounded-md;
+.typhography pre > div {
+  @apply rounded-lg !p-8 !text-base;
 }
+
+/* .typhography pre code {
+  @apply bg-gray-200 rounded-md;
+} */
 
 .typhography hr {
   @apply my-4;

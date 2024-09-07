@@ -1,6 +1,8 @@
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
+// import SplitLayout from '@/components/common/layout/SplitLayout';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
+import MarkdownNav from '@/lib/MarkdownNav';
 import { getPostBySlug } from '@/lib/post';
 import MakrdownVidwer from '@/service/Markdown';
 
@@ -38,6 +40,7 @@ export default function Page({ params: { slug } }: PageProps) {
         <hr />
 
         <Gap size={4} />
+        <MarkdownNav markdown={content} />
         <MakrdownVidwer>{content}</MakrdownVidwer>
       </Wrapper>
     </Container>
