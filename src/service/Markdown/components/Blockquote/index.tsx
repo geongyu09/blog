@@ -14,7 +14,7 @@ export default function Blockquote({
   return (
     <blockquote
       className={cn(
-        'border-l-4 border-gray-300 my-12 pl-4 bg-slate-100 p-2 rounded-md',
+        'border-l-4 border-gray-300 my-12 bg-slate-100 py-2 px-8 rounded-md',
         className,
       )}
       {...rest}
