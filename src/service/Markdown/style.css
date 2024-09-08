@@ -1,57 +1,54 @@
-.typhography h1 {
+/* .typhography h1 {
   @apply text-3xl font-bold mt-12 mb-8;
-}
+} */
 
-.typhography h2 {
+/* .typhography h2 {
   @apply text-2xl font-bold mt-12 mb-8;
-}
+} */
 
-.typhography h3 {
+/* .typhography h3 {
   @apply text-xl font-bold mt-12 mb-8;
-}
+} */
 
-.typhography h4 {
-  @apply text-lg font-bold mt-12 mb-8;
-}
-.typhography p {
+/* .typhography p {
   @apply text-lg my-4 leading-relaxed;
-}
+} */
 
-.typhography ul {
+/* .typhography ul {
   @apply list-disc my-4 pl-8;
-}
+} */
 
-.typhography ol {
+/* .typhography ol {
   @apply list-decimal my-4;
-}
+} */
 
-.typhography li {
+/* .typhography li {
   @apply text-lg my-2;
-}
+} */
 
-.typhography blockquote {
+/* .typhography blockquote {
   @apply border-l-4 border-gray-300 my-12 pl-4 bg-slate-100 p-2 rounded-md;
-}
+} */
 
-.typhography a {
+/* .typhography a {
   @apply text-blue-500 underline;
-}
+} */
 
-.typhography img {
+/* .typhography img {
   @apply my-4;
-}
+} */
 
-.typhography table {
+/* .typhography table {
   @apply w-full my-4;
-}
+} */
 
-.typhography th {
+/* .typhography th {
   @apply text-lg font-bold;
-}
+} */
 
-.typhography td {
+/* .typhography td {
   @apply text-lg;
-}
+} */
 
 /* .typhography code {
   @apply bg-gray-100 p-1 rounded-md text-sm;
@@ -61,7 +58,7 @@
   @apply my-4 rounded-lg overflow-hidden;
 } */
 
-.typhography pre > div {
+.typhography pre > div > div {
   @apply rounded-lg !p-8 !text-base;
 }
 
@@ -69,10 +66,10 @@
   @apply bg-gray-200 rounded-md;
 } */
 
-.typhography hr {
+/* .typhography hr {
   @apply my-4;
-}
+} */
 
-.typhography em {
+/* .typhography em {
   @apply italic mx-1;
-}
+} */
