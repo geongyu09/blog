@@ -3,6 +3,7 @@ import cn from '@/utils/cn';
 import Link from 'next/link';
 import { parseMarkdown } from '@/lib/markdown';
 import Gap from '@/components/common/layout/Gap';
+import headerUtil from '@/utils/contentHeader';
 
 interface MarkdownNavProps {
   markdown: string;
@@ -21,7 +22,7 @@ export default function MarkdownNav({ markdown }: MarkdownNavProps) {
         {headers.map(({ text, level }, index) => (
           <Link
             key={`${text}-${level}-${index * 2}`}
-            href={`#${encodeURIComponent(text.toLowerCase().replace(/\s+/g, '-'))}`}
+            href={`#${headerUtil.getHeaderHashText(text)}`}
           >
             <p
               className={cn(

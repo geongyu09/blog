@@ -1,5 +1,9 @@
+'use client';
+
 import React from 'react';
 import cn from '@/utils/cn';
+import headerUtil from '@/utils/contentHeader';
+import Link from 'next/link';
 
 interface H1Props extends React.HTMLAttributes<HTMLHeadingElement> {
   children?: React.ReactNode;
@@ -11,11 +15,21 @@ export default function H1({
   className = '',
   ...rest
 }: H1Props): JSX.Element {
-  console.log(children);
+  const headerId = headerUtil.getHeaderHashText(children as string);
   return (
-    <h1 className={cn('text-3xl font-bold mt-12 mb-8', className)} {...rest}>
-      {children}
-    </h1>
+    <Link href={`#${headerId}`}>
+      <h1
+        id={headerId}
+        className={cn(
+          'text-3xl font-bold mt-12 mb-8',
+          'hover:opacity-80 hover:',
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </h1>
+    </Link>
   );
 }
 

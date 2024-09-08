@@ -19,7 +19,7 @@ import {
   Table,
   UL,
 } from './components';
-// import './style.css';
+import './style.css';
 
 interface MarkdownProps {
   markdown: string;

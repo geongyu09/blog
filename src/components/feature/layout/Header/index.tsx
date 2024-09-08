@@ -1,3 +1,4 @@
+import { IGithub } from '@/components/common/icons';
 import Container from '@/components/common/layout/Container';
 import Link from 'next/link';
 
@@ -13,6 +14,11 @@ export default function Header() {
             </li>
             <li>
               <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="https://github.com/geongyu09" target="_blank">
+                <IGithub />
+              </Link>
             </li>
           </ul>
         </nav>

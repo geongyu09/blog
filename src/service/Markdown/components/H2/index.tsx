@@ -1,5 +1,7 @@
 import React from 'react';
 import cn from '@/utils/cn';
+import headerUtil from '@/utils/contentHeader';
+import Link from 'next/link';
 
 interface H2Props extends React.HTMLAttributes<HTMLHeadingElement> {
   children?: React.ReactNode;
@@ -11,10 +13,21 @@ export default function H2({
   className = '',
   ...rest
 }: H2Props): JSX.Element {
+  const headerId = headerUtil.getHeaderHashText(children as string);
   return (
-    <h2 className={cn('text-2xl font-bold mt-12 mb-8', className)} {...rest}>
-      {children}
-    </h2>
+    <Link href={`#${headerId}`}>
+      <h2
+        id={headerId}
+        className={cn(
+          'text-2xl font-bold mt-12 mb-8',
+          'hover:opacity-80',
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </h2>
+    </Link>
   );
 }
 
