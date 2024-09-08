@@ -2,7 +2,7 @@
 
 import React from 'react';
 import cn from '@/utils/cn';
-import headerUtil from '@/utils/header';
+import headerUtil from '@/utils/contentHeader';
 import Link from 'next/link';
 
 interface H1Props extends React.HTMLAttributes<HTMLHeadingElement> {

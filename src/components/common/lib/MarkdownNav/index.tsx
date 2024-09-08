@@ -3,7 +3,7 @@ import cn from '@/utils/cn';
 import Link from 'next/link';
 import { parseMarkdown } from '@/lib/markdown';
 import Gap from '@/components/common/layout/Gap';
-import headerUtil from '@/utils/header';
+import headerUtil from '@/utils/contentHeader';
 
 interface MarkdownNavProps {
   markdown: string;
