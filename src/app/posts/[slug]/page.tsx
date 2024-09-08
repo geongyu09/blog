@@ -13,25 +13,19 @@ interface PageProps {
 export default function Page({ params: { slug } }: PageProps) {
   const {
     content,
-    data: { date, title, thumbnail },
+    data: { date, title, description },
   } = getPostBySlug(slug);
 
   return (
     <Container>
       <Gap size={4} />
-      <div
-        className="h-[500px] bg-slate-200 rounded-md"
-        style={{
-          backgroundImage: `url(${thumbnail})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
 
-      <Wrapper padding={36}>
+      <Wrapper padding={48}>
         <Gap size={12} />
         <h2 className="text-4xl font-bold">{title}</h2>
-        <Gap size={8} />
+        <Gap size={4} />
+        <p className="text-lg font-semibold opacity-90">{description}</p>
+        <Gap size={2} />
         <span className="text-lg font-semibold opacity-70">
           업로드 날짜: {date.split('T')[0]}
         </span>
