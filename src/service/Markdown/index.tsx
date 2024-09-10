@@ -1,13 +1,13 @@
 import remarkGfm from 'remark-gfm';
 import Markdown from 'react-markdown';
 import {
+  H1,
   H2,
   H3,
   A,
   Blockquote,
   Code,
   EM,
-  H1,
   HR,
   Img,
   LI,
@@ -38,7 +38,6 @@ export default function MarkdownViewer({ markdown }: MarkdownProps) {
         ul: UL,
         ol: OL,
         li: LI,
-        blockquote: Blockquote,
         a: A,
         img: Img,
         table: Table,
@@ -47,6 +46,7 @@ export default function MarkdownViewer({ markdown }: MarkdownProps) {
         pre: Pre,
         hr: HR,
         em: EM,
+        blockquote: Blockquote as any,
       }}
     >
       {markdown}

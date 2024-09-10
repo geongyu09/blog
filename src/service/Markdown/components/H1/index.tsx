@@ -18,7 +18,7 @@ export default function H1({
   const headerId = headerUtil.getHeaderHashText(children as string);
   return (
     <Link href={`#${headerId}`}>
-      <h1
+      <h4
         id={headerId}
         className={cn(
           'text-3xl font-bold mt-12 mb-8',
@@ -28,7 +28,7 @@ export default function H1({
         {...rest}
       >
         {children}
-      </h1>
+      </h4>
     </Link>
   );
 }
