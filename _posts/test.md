@@ -3,6 +3,7 @@ title: Hello
 date: '2024-03-16T05:35:07.322Z'
 description: '짧지 않은 설명'
 thumbnail: '/assets/blog/test/testThumb.jpg'
+tags: 'next.js coding concept'
 ---
 
 # 개요

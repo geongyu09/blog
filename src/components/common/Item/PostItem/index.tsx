@@ -19,6 +19,7 @@ export default function PostItem({
   tagString,
 }: PostItemProps) {
   const tags = tagString.split(' ');
+
   return (
     <Link href={href}>
       <article className="group cursor-pointer select-none rounded-lg transition w-full overflow-hidden shadow-sm hover:shadow-lg">
@@ -37,9 +38,9 @@ export default function PostItem({
           <p>{description}</p>
           <Gap size={4} />
           <div>
-            {tags.map(() => (
-              <span className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm mr-2">
-                {tags}
+            {tags.map((tag) => (
+              <span className="bg-indigo-300 text-gray-700 px-2 py-1 rounded-full text-sm mr-2">
+                {tag}
               </span>
             ))}
           </div>

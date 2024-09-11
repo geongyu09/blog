@@ -3,6 +3,7 @@ title: Next란?
 thumbnail: '/assets/blog/test/testThumb.jpg'
 description: '간단히 Next.js의 공부 내용을 정리해보았습니다. Next의 탄생 배경 및 장점에 대한 내용을 다룹니다.'
 date: '2024-03-16T05:35:07.322Z'
+tags: 'next.js coding concept'
 ---
 
 # history
