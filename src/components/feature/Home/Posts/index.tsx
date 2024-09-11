@@ -6,7 +6,7 @@ export default function Posts() {
   const allPosts = getAllPosts();
   return (
     <>
-      {allPosts.map(({ slug, data: { date, description, title } }) => (
+      {allPosts.map(({ slug, data: { date, description, title, tags } }) => (
         <>
           <PostItem
             key={`${slug}-${title}-${date}-${description}`}
@@ -14,6 +14,7 @@ export default function Posts() {
             description={description}
             date={date}
             href={`/posts/${slug}`}
+            tagString={tags}
           />
           <Gap size={12} />
         </>

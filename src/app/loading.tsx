@@ -1,3 +1,3 @@
 export default function loading() {
-  return <div>ㅁㄴㄹㅇㄴ</div>;
+  return <div>Loading</div>;
 }
