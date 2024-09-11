@@ -16,7 +16,7 @@ export default function H3({
   const headerId = headerUtil.getHeaderHashText(children as string);
   return (
     <Link href={`#${headerId}`}>
-      <h3
+      <h6
         id={headerId}
         className={cn(
           'text-2xl font-bold mt-12 mb-8',
@@ -26,7 +26,7 @@ export default function H3({
         {...rest}
       >
         {children}
-      </h3>
+      </h6>
     </Link>
   );
 }

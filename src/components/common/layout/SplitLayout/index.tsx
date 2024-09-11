@@ -6,8 +6,8 @@ interface SplitLayoutProps extends PropsWithChildren<{}> {
 export default function SplitLayout({ children, sidebar }: SplitLayoutProps) {
   return (
     <div className="grid grid-cols-[2fr_1fr] gap-4">
-      {children}
-      {sidebar}
+      <div>{children}</div>
+      <div>{sidebar}</div>
     </div>
   );
 }
