@@ -15,10 +15,19 @@ interface HomeProps {
 export default function Home({ searchParams: { tag } }: HomeProps) {
   return (
     <>
+      <Gap size={12} />
+      {/* <Container>
+        <div className="text-center h-80 flex flex-col justify-center">
+          <h1 className="text-4xl font-bold">"Hello World!" 👋</h1>
+          <Gap size={4} />
+          <p className="text-lg">안녕하세요! 00하는 개발자 박건규입니다!</p>
+        </div>
+      </Container> */}
+
       <Banner />
       <Gap size={12} />
       <Container>
-        <MonitoringEmbedSection />
+        {/* <MonitoringEmbedSection /> */}
         <Gap size={12} />
 
         <h2 className="text-2xl font-bold">전체 포스트</h2>
