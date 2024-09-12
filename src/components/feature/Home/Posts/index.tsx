@@ -1,13 +1,25 @@
 import PostItem from '@/components/common/item/PostItem';
-import Gap from '@/components/common/layout/Gap';
 import { getAllPosts } from '@/lib/post';
+import { Post } from '@/types/post';
 
-export default function Posts() {
+interface PostsProps {
+  filteredTag?: string;
+}
+export default function Posts({ filteredTag }: PostsProps) {
   const allPosts = getAllPosts();
+
+  let filteredPosts: Post[] = [];
+
+  if (filteredTag)
+    filteredPosts = allPosts.filter(
+      ({ data: { tags } }) => tags.indexOf(filteredTag) !== -1,
+    );
+  else filteredPosts = allPosts;
+
   return (
-    <>
-      {allPosts.map(({ slug, data: { date, description, title, tags } }) => (
-        <>
+    <section className="flex flex-col gap-12">
+      {filteredPosts.map(
+        ({ slug, data: { date, description, title, tags } }) => (
           <PostItem
             key={`${slug}-${title}-${date}-${description}`}
             title={title}
@@ -16,9 +28,12 @@ export default function Posts() {
             href={`/posts/${slug}`}
             tagString={tags}
           />
-          <Gap size={12} />
-        </>
-      ))}
-    </>
+        ),
+      )}
+    </section>
   );
 }
+
+Posts.defaultProps = {
+  filteredTag: undefined,
+};

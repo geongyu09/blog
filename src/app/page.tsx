@@ -5,8 +5,12 @@ import SplitLayout from '@/components/common/layout/SplitLayout';
 import Banner from '@/components/feature/Home/HomeBanner';
 import MonitoringEmbedSection from '@/components/feature/Home/MonitoringEmbedSection';
 import Posts from '@/components/feature/Home/Posts';
+import SideBarMenu from '@/components/feature/Home/SideBarMenu';
 
-export default function Home() {
+interface HomeProps {
+  searchParams: { tag?: string };
+}
+export default function Home({ searchParams: { tag } }: HomeProps) {
   return (
     <>
       <Banner />
@@ -14,8 +18,12 @@ export default function Home() {
       <Container>
         <MonitoringEmbedSection />
         <Gap size={12} />
-        <SplitLayout sidebar={<div>hihihihihihihihihihihihihihihihi</div>}>
-          <Posts />
+
+        <h2 className="text-2xl font-bold">전체 포스트</h2>
+
+        <Gap size={4} />
+        <SplitLayout sidebar={<SideBarMenu />}>
+          <Posts filteredTag={tag} />
         </SplitLayout>
       </Container>
     </>

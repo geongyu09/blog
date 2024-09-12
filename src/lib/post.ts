@@ -21,6 +21,8 @@ function checkPostData(post: Post) {
 
 const postsDirectory = join(process.cwd(), '_posts');
 
+// =================================================================
+
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
@@ -53,4 +55,16 @@ export function getAllPosts(): Post[] {
   posts.forEach((post) => checkPostData(post));
 
   return posts;
+}
+
+export function getAllTags() {
+  const allPosts = getAllPosts();
+
+  const tags = new Set<string>();
+
+  allPosts
+    .map((post) => post.data.tags)
+    .forEach((tag) => tag.split(' ').forEach((t) => tags.add(t)));
+
+  return Array.from(tags);
 }
