@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Gap from '../../layout/Gap';
+import Tag from '../../tag';
 
 interface PostItemProps {
   title: string;
@@ -38,10 +39,8 @@ export default function PostItem({
           <p>{description}</p>
           <Gap size={4} />
           <div>
-            {tags.map((tag) => (
-              <span className="bg-indigo-300 text-gray-700 px-2 py-1 rounded-full text-sm mr-2">
-                {tag}
-              </span>
+            {tags.map((tag, index) => (
+              <Tag key={`${tag}-${index * 2}`} tag={tag} />
             ))}
           </div>
 
