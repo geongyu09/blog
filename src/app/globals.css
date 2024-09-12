@@ -22,6 +22,12 @@
       @apply hover:text-blue-500 hover:underline;
     }
   }
+
+  .link-hover {
+    &:hover {
+      @apply hover:opacity-70 transition-opacity;
+    }
+  }
 }
 
 @font-face {
