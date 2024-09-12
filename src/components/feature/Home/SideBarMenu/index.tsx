@@ -6,7 +6,7 @@ export default function SideBarMenu() {
   const tags = getAllTags();
 
   return (
-    <aside className="sticky top-10">
+    <aside className="sticky top-16">
       <section className="border h-96 rounded-lg p-4">
         <h3 className="text-lg font-bold">태그</h3>
         <ul>
