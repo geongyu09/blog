@@ -27,7 +27,7 @@ export default function MarkdownNav({ markdown }: MarkdownNavProps) {
             <p
               className={cn(
                 'cursor-pointer transition-colors duration-200 text-sm text-zinc-400',
-                'hover:text-blue-500 hover:underline',
+                'list-hover',
                 {
                   'ml-0': level === 1,
                   'ml-6': level === 2,
