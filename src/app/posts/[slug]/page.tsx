@@ -2,7 +2,7 @@ import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
-import { getPostBySlug } from '@/lib/post';
+import { getPostBySlug, getPostSlugs } from '@/lib/post';
 import MarkdownViewer from '@/service/Markdown';
 
 interface PageProps {
@@ -38,4 +38,15 @@ export default function Page({ params: { slug } }: PageProps) {
       </Wrapper>
     </Container>
   );
+}
+
+export function generateStaticParams() {
+  const slugs = getPostSlugs();
+  console.log(slugs);
+
+  return slugs.map((slug) => ({
+    params: {
+      slug,
+    },
+  }));
 }
