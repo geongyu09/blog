@@ -20,6 +20,7 @@ export default function PostItem({
   tagString,
 }: PostItemProps) {
   const tags = tagString.split(' ');
+  console.log(image);
 
   return (
     <Link href={href}>

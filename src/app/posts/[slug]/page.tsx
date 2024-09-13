@@ -42,8 +42,6 @@ export default function Page({ params: { slug } }: PageProps) {
 
 export function generateStaticParams() {
   const slugs = getPostSlugs();
-  console.log(slugs);
-
   return slugs.map((slug) => ({
     params: {
       slug,

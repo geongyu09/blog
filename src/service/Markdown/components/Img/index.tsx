@@ -2,12 +2,9 @@ import React from 'react';
 import cn from '@/utils/cn';
 import Image from 'next/image';
 
-interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  className?: string;
-}
+interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 export default function Img({
-  className = '',
   width,
   height,
   src,
@@ -15,11 +12,11 @@ export default function Img({
 }: ImgProps): JSX.Element {
   return (
     <Image
-      width={width ? Number(width) : 0}
-      height={height ? Number(height) : 0}
+      width={width ? Number(width) : 1000}
+      height={height ? Number(height) : 1000}
       src={src ?? ''}
-      alt={alt ?? ''}
-      className={cn('my-4', className)}
+      alt={alt ?? 'post content'}
+      className={cn('my-14 w-full rounded-xl shadow-sm select-none')}
     />
   );
 }

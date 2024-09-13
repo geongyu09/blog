@@ -3,7 +3,6 @@ import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
 import HomeBanner from '@/components/feature/Home/HomeBanner';
-// import MonitoringEmbedSection from '@/components/feature/Home/MonitoringEmbedSection';
 import Posts from '@/components/feature/Home/Posts';
 import SideBarMenu from '@/components/feature/Home/SideBarMenu';
 import Link from 'next/link';

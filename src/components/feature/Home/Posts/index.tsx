@@ -19,7 +19,7 @@ export default function Posts({ filteredTag }: PostsProps) {
   return (
     <section className="flex flex-col gap-12">
       {filteredPosts.map(
-        ({ slug, data: { date, description, title, tags } }) => (
+        ({ slug, data: { date, description, title, tags, thumbnail } }) => (
           <PostItem
             key={`${slug}-${title}-${date}-${description}`}
             title={title}
@@ -27,6 +27,7 @@ export default function Posts({ filteredTag }: PostsProps) {
             date={date}
             href={`/posts/${slug}`}
             tagString={tags}
+            image={thumbnail}
           />
         ),
       )}
