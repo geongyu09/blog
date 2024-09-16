@@ -2,7 +2,7 @@ import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
-import HomeBanner from '@/components/feature/Home/HomeBanner';
+import HomeBannerSection from '@/components/feature/Home/HomeBannerSection';
 import Posts from '@/components/feature/Home/Posts';
 import SideBarMenu from '@/components/feature/Home/SideBarMenu';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ interface HomeProps {
 export default function Home({ searchParams: { tag } }: HomeProps) {
   return (
     <>
-      <HomeBanner />
+      <HomeBannerSection />
       <Gap size={12} />
       <Container>
         <Gap size={12} />
