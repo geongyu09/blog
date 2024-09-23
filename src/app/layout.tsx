@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/feature/layout/Header';
 import { PropsWithChildren } from 'react';
+import ModalProvider from '@/lib/modal/provider';
 
 export const metadata: Metadata = {
   title: 'geongyu09 | Blog',
@@ -12,8 +13,10 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="ko">
       <body>
-        <Header />
-        <main>{children}</main>
+        <ModalProvider>
+          <Header />
+          <main>{children}</main>
+        </ModalProvider>
       </body>
     </html>
   );

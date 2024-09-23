@@ -2,8 +2,9 @@
 
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
-import useModal from '@/hooks/useModal';
-import PortalCreator from '@/components/common/lib/modal/PortalCreator';
+// import PortalCreator from '@/components/common/lib/modal/PortalCreator';
+// import useModal from '@/hooks/useModal';
+import useModal from '@/lib/modal/hooks/useModal';
 
 function HomeBanner() {
   return (
@@ -24,25 +25,26 @@ function HomeBanner() {
   );
 }
 
+function TestModal() {
+  return (
+    <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-all w-full h-full">
+      <div className="">sdf</div>
+    </section>
+  );
+}
+
 export default function HomeBannerSection() {
-  const { openModal, closeModal, isOpen } = useModal();
+  const { setModal } = useModal();
+
+  const handleClick = () => {
+    setModal(<TestModal />);
+  };
 
   return (
     <section className="relative">
-      <HomeBanner />
-      <button
-        type="button"
-        className="w-full h-full absolute inset-0"
-        onClick={openModal}
-        aria-label="Open Modal"
-      />
-      {isOpen && (
-        <PortalCreator>
-          <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-all w-full h-full">
-            <div className=""></div>
-          </section>
-        </PortalCreator>
-      )}
+      <button onClick={handleClick} type="button" className="w-full">
+        <HomeBanner />
+      </button>
     </section>
   );
 }
