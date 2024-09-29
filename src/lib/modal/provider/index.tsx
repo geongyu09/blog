@@ -1,12 +1,11 @@
 'use client';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PortalCreator from '@/components/common/lib/modal/PortalCreator';
 import ModalContext from '../context/index';
+import type { Modal } from '../context/index';
 
-export type Modal = React.ReactNode;
-
-interface ModalStackItem {
+interface ModalQueueItem {
   key: string;
   modal: Modal;
 }
@@ -16,26 +15,36 @@ interface ModalProviderProps {
 }
 
 export default function ModalProvider({ children }: ModalProviderProps) {
-  const [modalStack, setModalStack] = useState<ModalStackItem[]>([]);
+  const [modalQueue, setModalQueue] = useState<ModalQueueItem[]>([]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pushModal = useCallback((modal: Modal) => {
     const key = Date.now().toString();
-    setModalStack((prev) => [...prev, { key, modal }]);
+    setModalQueue((prev) => [...prev, { key, modal }]);
   }, []);
 
-  return (
-    <ModalContext.Provider value={pushModal}>
-      {children}
-      {modalStack &&
-        modalStack.map(({ modal }, index) => {
-          return (
-            <PortalCreator key={`${index * 2}-${modal}`}>
-              <section className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-all w-full h-full">
-                <div className="">{modal}</div>
-              </section>
-            </PortalCreator>
-          );
-        })}
-    </ModalContext.Provider>
-  );
+  useEffect(() => {
+    if (modalQueue.length > 0) {
+      setIsOpen(true);
+    }
+  }, [modalQueue, setIsOpen]);
+
+  <ModalContext.Provider value={pushModal}>
+    {children}
+    {/* {currentModal && <PortalCreator>{currentModal}</PortalCreator>} */}
+    {isOpen && (
+      <PortalCreator>
+        <button
+          type="button"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-all w-full h-full"
+          onClick={() => {
+            setModalQueue((prev) => prev.slice(1));
+            setIsOpen(false);
+          }}
+        >
+          <div className="">{modalQueue[0].modal}</div>
+        </button>
+      </PortalCreator>
+    )}
+  </ModalContext.Provider>;
 }
