@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="ko">
-      <body>
-        <ModalProvider>
+      <ModalProvider>
+        <body>
           <Header />
           <main>{children}</main>
-        </ModalProvider>
-      </body>
+        </body>
+      </ModalProvider>
     </html>
   );
 }
