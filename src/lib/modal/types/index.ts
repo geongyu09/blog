@@ -7,7 +7,7 @@ export interface ModalContextValue {
   pushModal: ({ modal, onClose }: PushModal) => void;
   setResponse: (response: boolean | string) => void;
   getResponse: () => string | boolean | null;
-  closeModal: () => void;
+  closeModal: (callback?: (response: boolean | string | null) => void) => void;
 }
 
 export type Modal = React.ReactNode;

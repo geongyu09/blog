@@ -6,8 +6,8 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import PortalCreator from '@/components/common/lib/modal/PortalCreator';
-import ModalContext from '../context/index';
-import type { Modal, ModalContextValue, PushModal } from '../types';
+import { Modal, ModalContextValue, PushModal } from '../types';
+import ModalContext from '../context';
 
 interface ModalQueueItem {
   key: string;
@@ -24,7 +24,7 @@ export default function ModalProvider({ children }: ModalProviderProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // in modal state
-  const [modalCloseResponse, setModalCloseResponse] = useState<
+  const [modalInternalDataState, setModalInternalDataState] = useState<
     boolean | string | null
   >(null);
 
@@ -33,6 +33,7 @@ export default function ModalProvider({ children }: ModalProviderProps) {
   useEffect(() => {
     if (modalQueue.length > 0) {
       setIsOpen(true);
+      setModalInternalDataState(null);
     }
   }, [modalQueue, setIsOpen]);
 
@@ -52,7 +53,7 @@ export default function ModalProvider({ children }: ModalProviderProps) {
    * 이는 모달 컴포넌트 내에서 사용할 수 있다.
    */
   const setResponse = useCallback((response: boolean | string) => {
-    setModalCloseResponse(response);
+    setModalInternalDataState(response);
   }, []);
 
   /**
@@ -60,18 +61,22 @@ export default function ModalProvider({ children }: ModalProviderProps) {
    * 이는 일반 컴포넌트에서 사용할 수 있다.
    */
   const getResponse = useCallback(() => {
-    return modalCloseResponse;
-  }, [modalCloseResponse]);
+    return modalInternalDataState;
+  }, [modalInternalDataState]);
 
   /**
    * 모달을 닫는 함수
    * ModalQueue에서 첫번째 모달을 제거하고, isOpen을 false로 변경한다.
    */
-  const closeModal = useCallback(() => {
-    currentModal.onClose();
-    setModalQueue((prev) => prev.slice(1));
-    setIsOpen(false);
-  }, [currentModal]);
+  const closeModal = useCallback(
+    (callback?: (response: boolean | string | null) => void) => {
+      currentModal.onClose();
+      callback?.(modalInternalDataState);
+      setModalQueue((prev) => prev.slice(1));
+      setIsOpen(false);
+    },
+    [currentModal, modalInternalDataState],
+  );
 
   const value: ModalContextValue = useMemo(
     () => ({

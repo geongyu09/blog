@@ -2,13 +2,13 @@
 
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
-// import PortalCreator from '@/components/common/lib/modal/PortalCreator';
-// import useModal from '@/hooks/useModal';
 import useModal from '@/lib/modal/hooks/useModal';
-import { useRef } from 'react';
-// import { useRef } from 'react';
+import { useState } from 'react';
 
 function HomeBanner() {
+  const { getResponse } = useModal();
+  console.log(getResponse());
+
   return (
     <div className="bg-[#f1f1f1] group select-none relative">
       <Container>
@@ -29,8 +29,9 @@ function HomeBanner() {
 
 function TestModal() {
   // 모달에서도 onClose를 설정할 수 있어야 한다..?
-  const { closeModal, setResponse } = useModal();
-  const inputRef = useRef<HTMLInputElement>(null);
+  const { closeModal, setResponse, getResponse } = useModal();
+
+  const [text, setText] = useState<string>(getResponse() as string);
 
   return (
     <div className="fixed bottom-0 right-0 w-screen h-screen z-50 ">
@@ -42,16 +43,22 @@ function TestModal() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            setResponse(inputRef.current?.value ?? '');
-            closeModal();
+            setResponse(text);
+            closeModal(() => {
+              alert('submit');
+            });
           }}
         >
-          <input type="text" className="border" ref={inputRef} />
+          <input
+            type="text"
+            className="border"
+            onChange={(e) => setText(e.target.value)}
+          />
         </form>
         <button
           type="button"
           onClick={() => {
-            setResponse('response');
+            setResponse('close');
             closeModal();
           }}
         >
@@ -69,7 +76,6 @@ export default function HomeBannerSection() {
     pushModal({
       modal: <TestModal />,
       onClose: () => {
-        alert('onClose');
         alert(getResponse());
       },
     });
