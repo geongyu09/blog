@@ -3,6 +3,7 @@ title: Next.js의 렌더링
 date: '2024-03-16T05:35:07.322Z'
 description: '짧지 않은 설명'
 thumbnail: '/assets/blog/test/testThumb.jpg'
+tags: 'next.js coding concept'
 ---
 
 이전에는 페이지 단위로 렌더링 방식을 정했었다. 기존의 경우 빌드한 html파일을 보내고, js를 보내서 hydrated를 실현했다. 다만 이 경우 어플리케이션 규모가 커질수록 js번들링 사이즈가 커지는 문제점이 있었다.

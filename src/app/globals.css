@@ -16,6 +16,20 @@
   }
 }
 
+@layer components {
+  .list-hover {
+    &:hover {
+      @apply hover:text-blue-500 hover:underline;
+    }
+  }
+
+  .link-hover {
+    &:hover {
+      @apply hover:opacity-70 transition-opacity;
+    }
+  }
+}
+
 @font-face {
   font-family: 'Pretendard';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff')

@@ -1,6 +1,6 @@
 export interface Headers {
   text: string;
-  level: number;
+  level: 1 | 2 | 3 | number;
 }
 export function parseMarkdown(markdown: string) {
   const lines = markdown.split('\n');

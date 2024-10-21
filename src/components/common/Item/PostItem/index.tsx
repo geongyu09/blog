@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import Gap from '../../layout/Gap';
+import Tag from '../../tag';
 
 interface PostItemProps {
   title: string;
@@ -8,6 +9,7 @@ interface PostItemProps {
   date: string;
   href: string;
   image?: string;
+  tagString: string;
 }
 export default function PostItem({
   description,
@@ -15,7 +17,10 @@ export default function PostItem({
   href,
   title,
   image,
+  tagString,
 }: PostItemProps) {
+  const tags = tagString.split(' ');
+
   return (
     <Link href={href}>
       <article className="group cursor-pointer select-none rounded-lg transition w-full overflow-hidden shadow-sm hover:shadow-lg">
@@ -32,7 +37,14 @@ export default function PostItem({
           <h4 className="text-xl font-bold">{title}</h4>
           <Gap size={2} />
           <p>{description}</p>
-          <Gap size={12} />
+          <Gap size={4} />
+          <div>
+            {tags.map((tag, index) => (
+              <Tag key={`${tag}-${index * 2}`} tag={tag} />
+            ))}
+          </div>
+
+          <Gap size={8} />
           <div className="flex justify-between">
             <span className="opacity-70">{date}</span>
             <span className="font-semibold opacity-70 group-hover:opacity-100 transition">

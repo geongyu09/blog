@@ -2,7 +2,8 @@ import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
-import { getPostBySlug } from '@/lib/post';
+import SideTableOfContent from '@/components/feature/Post/SideTableOfContent';
+import { getPostBySlug, getPostSlugs } from '@/lib/post';
 import MarkdownViewer from '@/service/Markdown';
 
 interface PageProps {
@@ -27,6 +28,7 @@ export default function Page({ params: { slug } }: PageProps) {
         <p className="text-lg font-semibold opacity-90">{description}</p>
         <Gap size={2} />
         <span className="text-lg font-semibold opacity-70">
+          {/* TODO: 업로드 형태 정하기 혹은 해당 로직을 함수로 빼기 */}
           업로드 날짜: {date.split('T')[0]}
         </span>
         <Gap size={4} />
@@ -34,8 +36,19 @@ export default function Page({ params: { slug } }: PageProps) {
 
         <Gap size={4} />
         <MarkdownNav markdown={content} />
+        <hr />
         <MarkdownViewer markdown={content} />
       </Wrapper>
+      <SideTableOfContent content={content} />
     </Container>
   );
+}
+
+export function generateStaticParams() {
+  const slugs = getPostSlugs();
+  return slugs.map((slug) => ({
+    params: {
+      slug,
+    },
+  }));
 }

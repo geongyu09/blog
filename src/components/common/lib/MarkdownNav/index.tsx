@@ -7,13 +7,14 @@ import headerUtil from '@/utils/contentHeader';
 
 interface MarkdownNavProps {
   markdown: string;
+  className?: string;
 }
 
-export default function MarkdownNav({ markdown }: MarkdownNavProps) {
+export default function MarkdownNav({ markdown, className }: MarkdownNavProps) {
   const headers = parseMarkdown(markdown);
 
   return (
-    <nav className="border-b py-2 px-4">
+    <nav className={cn('py-2 px-4', className)}>
       <p className="text-base font-semibold">Content of this post</p>
 
       <Gap size={2} />
@@ -27,7 +28,7 @@ export default function MarkdownNav({ markdown }: MarkdownNavProps) {
             <p
               className={cn(
                 'cursor-pointer transition-colors duration-200 text-sm text-zinc-400',
-                'hover:text-blue-500 hover:underline',
+                'list-hover',
                 {
                   'ml-0': level === 1,
                   'ml-6': level === 2,
@@ -43,3 +44,7 @@ export default function MarkdownNav({ markdown }: MarkdownNavProps) {
     </nav>
   );
 }
+
+MarkdownNav.defaultProps = {
+  className: '',
+};
