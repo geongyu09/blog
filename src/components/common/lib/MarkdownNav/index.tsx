@@ -14,7 +14,7 @@ export default function MarkdownNav({ markdown, className }: MarkdownNavProps) {
   const headers = parseMarkdown(markdown);
 
   return (
-    <nav className={cn('py-2 px-4', className)}>
+    <nav className={cn('py-2 px-4 select-none', className)}>
       <p className="text-base font-semibold">Content of this post</p>
 
       <Gap size={2} />
