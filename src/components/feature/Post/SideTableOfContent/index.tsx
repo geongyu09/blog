@@ -11,16 +11,22 @@ export default function SideTableOfContent({
   content,
 }: SideTableOfContentProps) {
   return (
-    <div className="fixed top-64 right-0 h-fit flex flex-col items-end gap-2 pr-2 group">
-      <div className="transition-all duration-300 ease-in-out opacity-100 group-hover:opacity-0">
-        <ShortTableOfContent content={content} />
-      </div>
+    <div className="fixed top-64 right-0 w-64">
+      <div className="relative">
+        {/* Short TOC */}
+        <div className="relative group">
+          <div className="transition-all duration-300 ease-in-out">
+            <ShortTableOfContent content={content} />
+          </div>
 
-      <div className="transition-all duration-180 ease-in-out fixed top-60 h-fit opacity-0 group-hover:opacity-100 ">
-        <MarkdownNav
-          markdown={content}
-          className="bg-white rounded-xl border p-4 shadow-md"
-        />
+          {/* Full TOC */}
+          <div className="absolute top-0 right-0 w-full transition-all duration-300 ease-in-out opacity-0 invisible group-hover:opacity-100 group-hover:visible">
+            <MarkdownNav
+              markdown={content}
+              className="bg-white rounded-xl border p-4 shadow-md"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function NotFound() {
   return (
-    <section className="flex flex-col items-center select-none">
+    <section className="flex flex-col items-center select-none h-screen">
       <Gap size={5} />
       <Image
         src="/assets/404/codingCat.png"
