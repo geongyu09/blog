@@ -19,7 +19,7 @@ function HomeBanner() {
           <p className="text-lg">안녕하세요! 00하는 개발자 박건규입니다!</p>
         </div>
         <span className="font-semibold opacity-70 group-hover:opacity-100 transition absolute right-10 bottom-10 cursor-pointer">
-          Read more &rarr;
+          Check Logs &rarr;
         </span>
         {/* </Link> */}
       </Container>
