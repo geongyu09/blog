@@ -32,7 +32,7 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
           </>
         )}
 
-        <SplitLayout sidebar={<SideBarMenu />}>
+        <SplitLayout sidebar={<SideBarMenu />} gap="xl">
           <Posts filteredTag={tag} />
         </SplitLayout>
       </Container>
