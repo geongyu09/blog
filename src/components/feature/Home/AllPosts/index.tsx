@@ -5,7 +5,7 @@ import { Post } from '@/types/post';
 interface PostsProps {
   filteredTag?: string;
 }
-export default function Posts({ filteredTag }: PostsProps) {
+export default function AllPosts({ filteredTag }: PostsProps) {
   const allPosts = getAllPosts();
 
   let filteredPosts: Post[] = [];
@@ -25,7 +25,7 @@ export default function Posts({ filteredTag }: PostsProps) {
             title={title}
             description={description}
             date={date}
-            href={`/posts/${slug}`}
+            href={`/post/${slug}`}
             tagString={tags}
             image={thumbnail}
           />
@@ -35,6 +35,6 @@ export default function Posts({ filteredTag }: PostsProps) {
   );
 }
 
-Posts.defaultProps = {
+AllPosts.defaultProps = {
   filteredTag: undefined,
 };
