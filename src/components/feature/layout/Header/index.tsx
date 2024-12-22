@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 bg-white z-50">
+    <header className="sticky top-0 bg-white z-50 select-none">
       <Container>
         <div className="py-4 flex justify-between">
           <h1 className="font-bold text-2xl">
