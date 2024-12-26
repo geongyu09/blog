@@ -1,11 +1,11 @@
 import PostItem from '@/components/common/item/PostItem';
-import { getAllPosts } from '@/lib/post';
+import { getAllPosts } from '@/lib/post/post';
 import { Post } from '@/types/post';
 
 interface PostsProps {
   filteredTag?: string;
 }
-export default function AllPosts({ filteredTag }: PostsProps) {
+export default function AllPostsSection({ filteredTag }: PostsProps) {
   const allPosts = getAllPosts();
 
   let filteredPosts: Post[] = [];
@@ -35,6 +35,6 @@ export default function AllPosts({ filteredTag }: PostsProps) {
   );
 }
 
-AllPosts.defaultProps = {
+AllPostsSection.defaultProps = {
   filteredTag: undefined,
 };

@@ -3,9 +3,9 @@ import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
 import HomeBannerSection from '@/components/feature/Home/HomeBannerSection';
-import Posts from '@/components/feature/Home/Posts';
 import SideBarMenu from '@/components/feature/Home/SideBarMenu';
 import Link from 'next/link';
+import CurrentPostsSection from '@/components/feature/Home/CurrentPostsSection';
 
 interface HomeProps {
   searchParams: { tag?: string };
@@ -18,7 +18,7 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
       <Container>
         <Gap size={12} />
 
-        <h2 className="text-2xl font-bold">전체 포스트</h2>
+        <h2 className="text-2xl font-bold">최근 포스트</h2>
         <Gap size={4} />
 
         {tag && (
@@ -33,7 +33,16 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
         )}
 
         <SplitLayout sidebar={<SideBarMenu />} gap="xl">
-          <Posts filteredTag={tag} />
+          <>
+            <CurrentPostsSection amount={2} />
+            <Gap size={8} />
+            <Link
+              href="/posts"
+              className="py-4 text-center block bg-slate-100 rounded-md text-slate-900 font-semibold"
+            >
+              전체 포스트 보기
+            </Link>
+          </>
         </SplitLayout>
       </Container>
     </>

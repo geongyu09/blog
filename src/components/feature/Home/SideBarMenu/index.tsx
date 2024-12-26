@@ -1,4 +1,4 @@
-import { getAllTags } from '@/lib/post';
+import { getAllTags } from '@/lib/post/post';
 import cn from '@/utils/cn';
 import Link from 'next/link';
 

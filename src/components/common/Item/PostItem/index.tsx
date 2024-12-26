@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import React from 'react';
-import Gap from '../../layout/Gap';
-import Tag from '../../tag';
+import Gap from '@/components/common/layout/Gap';
+import Tag from '@/components/common/tag';
 
 interface PostItemProps {
   title: string;
