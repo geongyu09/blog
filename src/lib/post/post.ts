@@ -29,7 +29,9 @@ export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1));
+    .sort((post1, post2) =>
+      post1.data.timeStamps > post2.data.timeStamps ? -1 : 1,
+    );
 
   if (posts.length === 0) {
     throw new Error('No posts found');
