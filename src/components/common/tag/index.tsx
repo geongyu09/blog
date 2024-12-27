@@ -1,6 +1,6 @@
 export default function Tag({ tag }: { tag: string }) {
   return (
-    <span className="bg-indigo-300 text-gray-700 px-2 py-1 rounded-full text-sm mr-2">
+    <span className="bg-slate-100 text-gray-600 px-3 py-1 rounded-full text-sm mr-2 font-medium">
       {tag}
     </span>
   );

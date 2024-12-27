@@ -2,8 +2,8 @@ import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
-import AllPostsSection from '@/components/feature/Home/AllPostsSection';
-import SideBarMenu from '@/components/feature/Home/SideBarMenu';
+import AllPostsSection from '@/components/feature/Post/AllPostsSection';
+import SideBarMenu from '@/components/common/SideBarMenu';
 import Link from 'next/link';
 
 interface PostPageProps {

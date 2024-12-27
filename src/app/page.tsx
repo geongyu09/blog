@@ -3,9 +3,9 @@ import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
 import HomeBannerSection from '@/components/feature/Home/HomeBannerSection';
-import SideBarMenu from '@/components/feature/Home/SideBarMenu';
 import Link from 'next/link';
 import CurrentPostsSection from '@/components/feature/Home/CurrentPostsSection';
+import AsideTagsSection from '@/components/feature/Posts/AsideTagsSection';
 
 interface HomeProps {
   searchParams: { tag?: string };
@@ -32,9 +32,9 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
           </>
         )}
 
-        <SplitLayout sidebar={<SideBarMenu />} gap="xl">
+        <SplitLayout sidebar={<AsideTagsSection />} gap="xl">
           <>
-            <CurrentPostsSection amount={2} />
+            <CurrentPostsSection amount={3} />
             <Gap size={8} />
             <Link
               href="/posts"
