@@ -3,8 +3,9 @@ import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
 import Tag from '@/components/common/tag';
 import AllPostsSection from '@/components/feature/Post/AllPostsSection';
-import SideBarMenu from '@/components/common/SideBarMenu';
 import Link from 'next/link';
+import SideBarMenu from '@/components/common/SideBarMenu';
+import TagsSection from '@/components/common/TagsSection';
 
 interface PostPageProps {
   searchParams: { tag?: string };
@@ -13,13 +14,14 @@ interface PostPageProps {
 export default function PostPage({ searchParams: { tag } }: PostPageProps) {
   return (
     <Container>
-      <h2 className="text-2xl font-bold">전체 포스트</h2>
-      <Gap size={4} />
+      <Gap size={14} />
+      <h2 className="text-4xl font-bold text-center">전체 포스트들</h2>
+      <Gap size={24} />
 
       {tag && (
         <>
           <div className="flex items-center gap-4">
-            <Link href="/">x</Link>
+            <Link href="/posts">x</Link>
             <p className="font-semibold">필터 : </p>
             <Tag tag={tag} />
           </div>
@@ -27,7 +29,14 @@ export default function PostPage({ searchParams: { tag } }: PostPageProps) {
         </>
       )}
 
-      <SplitLayout sidebar={<SideBarMenu />} gap="xl">
+      <SplitLayout
+        sidebar={
+          <SideBarMenu>
+            <TagsSection />
+          </SideBarMenu>
+        }
+        gap="xl"
+      >
         <AllPostsSection filteredTag={tag} />
       </SplitLayout>
     </Container>
