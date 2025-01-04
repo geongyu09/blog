@@ -7,6 +7,7 @@ import Link from 'next/link';
 import CurrentPostsSection from '@/components/feature/Home/CurrentPostsSection';
 import SideBarMenu from '@/components/common/SideBarMenu';
 import TagsSection from '@/components/common/TagsSection';
+import ROUTE_PATH from '@/constants/path/routePath';
 
 interface HomeProps {
   searchParams: { tag?: string };
@@ -45,7 +46,7 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
             <CurrentPostsSection amount={3} />
             <Gap size={8} />
             <Link
-              href="/posts"
+              href={ROUTE_PATH.POSTS({})}
               className="py-4 text-center block bg-slate-100 rounded-md text-slate-900 font-semibold"
             >
               전체 포스트 보기

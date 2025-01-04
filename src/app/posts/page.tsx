@@ -6,6 +6,7 @@ import AllPostsSection from '@/components/feature/Post/AllPostsSection';
 import Link from 'next/link';
 import SideBarMenu from '@/components/common/SideBarMenu';
 import TagsSection from '@/components/common/TagsSection';
+import ROUTE_PATH from '@/constants/path/routePath';
 
 interface PostPageProps {
   searchParams: { tag?: string };
@@ -21,7 +22,7 @@ export default function PostPage({ searchParams: { tag } }: PostPageProps) {
       {tag && (
         <>
           <div className="flex items-center gap-4">
-            <Link href="/posts">x</Link>
+            <Link href={ROUTE_PATH.POSTS({})}>x</Link>
             <p className="font-semibold">필터 : </p>
             <Tag tag={tag} />
           </div>

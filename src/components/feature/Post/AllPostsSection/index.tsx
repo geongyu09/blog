@@ -1,4 +1,5 @@
 import DefaultItem from '@/components/common/item/DefaultItem';
+import ROUTE_PATH from '@/constants/path/routePath';
 import { getAllPosts } from '@/lib/post/post';
 import { Post } from '@/types/post';
 
@@ -25,7 +26,7 @@ export default function AllPostsSection({ filteredTag }: PostsProps) {
             title={title}
             description={description}
             date={date}
-            href={`/post/${slug}`}
+            href={ROUTE_PATH.POST_DETAIL({ slug })}
             image={thumbnail}
           />
         ),

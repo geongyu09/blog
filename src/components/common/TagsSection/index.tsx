@@ -2,6 +2,7 @@ import { getAllTags } from '@/lib/post/post';
 import cn from '@/utils/cn';
 import Link from 'next/link';
 import Tag from '@/components/common/tag';
+import ROUTE_PATH from '@/constants/path/routePath';
 
 export default function TagsSection() {
   const tags = getAllTags();
@@ -15,7 +16,7 @@ export default function TagsSection() {
             key={`${tag}-${index * 2}`}
             className={cn('cursor-pointer mt-2', 'list-hover')}
           >
-            <Link href={`/posts?tag=${tag}`}>
+            <Link href={ROUTE_PATH.POSTS({ tag })}>
               <Tag tag={tag} />
             </Link>
           </li>
