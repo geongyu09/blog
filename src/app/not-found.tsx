@@ -6,7 +6,7 @@ import ROUTE_PATH from '@/constants/path/routePath';
 
 export default function NotFound() {
   return (
-    <section className="flex flex-col items-center select-none h-screen">
+    <section className="flex flex-col items-center select-none h-fit-to-screen">
       <Gap size={5} />
       <Image
         src="/assets/404/codingCat.png"

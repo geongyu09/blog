@@ -7,7 +7,7 @@ import Footer from '@/components/feature/layout/Footer';
 import Gap from '../components/common/layout/Gap/index';
 
 export const metadata: Metadata = {
-  title: 'geongyu09 | Blog',
+  title: '건규의 블로그 | Blog',
   description: '박건규의 블로그',
 };
 
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
       <ModalProvider>
         <body>
           <Header />
-          <main className="bg-white">{children}</main>
+          <main className="bg-white min-h-fit-to-screen">{children}</main>
           <Gap size={10} />
           <div>
             <Footer />
