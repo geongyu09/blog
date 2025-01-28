@@ -1,21 +1,45 @@
-import { Post } from '@/types/post';
 import Link from 'next/link';
+import Gap from '@/components/common/layout/Gap';
 
-interface DefaultItemProps extends Post {}
-export default function DefaultItem({ content, data, slug }: DefaultItemProps) {
+interface DefaultItemProps {
+  title: string;
+  description: string;
+  date: string;
+  href: string;
+  image: string;
+}
+
+export default function DefaultItem({
+  date,
+  description,
+  href,
+  title,
+  image,
+}: DefaultItemProps) {
   return (
-    <Link href={`/post/${slug}`}>
-      <div
-        className="w-[800px] h-[450px] rounded-lg hover:bg-black hover:bg-opacity-10 transition-all cursor-pointer"
-        // style={{
-        //   backgroundImage: `url(${data.thumbnail})`,
-        //   backgroundSize: 'cover',
-        //   backgroundPosition: 'center',
-        // }}
-      >
-        <p>{data.title}</p>
-        <p>{content}</p>
-      </div>
+    <Link href={href}>
+      <article className="group cursor-pointer select-none rounded-lg transition w-full overflow-hidden border border-gray-200 hover:bg-slate-50 p-4">
+        <div className="flex justify-between gap-4">
+          <div>
+            <h4 className="text-xl font-bold">{title}</h4>
+            <Gap size={2} />
+            <p>{description}</p>
+            <Gap size={4} />
+            <span className="opacity-70">{date}</span>
+          </div>
+
+          <div
+            className="rounded-lg border w-40 h-24 shrink-0"
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+        </div>
+        {/* <Gap size={8} /> */}
+        {/* <span className="opacity-70">{date}</span> */}
+      </article>
     </Link>
   );
 }

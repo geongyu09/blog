@@ -2,22 +2,7 @@ import { Post } from '@/types/post';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
-
-function checkPostData(post: Post) {
-  try {
-    if (!post.slug) throw new Error('올바르지 않는 포스트입니다.');
-    if (!post.data.date)
-      throw new Error(`"${post.slug}" 포스트에 날짜가 없습니다.`);
-    if (!post.data.description)
-      throw new Error(`"${post.slug}" 포스트에 설명이 없습니다.`);
-    if (!post.data.title)
-      throw new Error(`"${post.slug}" 포스트에 제목이 없습니다.`);
-    if (!post.data.tags)
-      throw new Error(`"${post.slug}" 포스트에 태그가 없습니다.`);
-  } catch (e: any) {
-    throw new Error(`올바르지 않은 포스트입니다. \n - ${e.message}`);
-  }
-}
+import { checkPostData } from './utils/validator';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -44,7 +29,9 @@ export function getAllPosts(): Post[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug))
-    .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1));
+    .sort((post1, post2) =>
+      post1.data.timeStamps > post2.data.timeStamps ? -1 : 1,
+    );
 
   if (posts.length === 0) {
     throw new Error('No posts found');
@@ -65,4 +52,15 @@ export function getAllTags() {
     .forEach((tag) => tag.split(' ').forEach((t) => tags.add(t)));
 
   return Array.from(tags);
+}
+
+/**
+ * @description 인자로 주어진 수만큼 최근 포스트를 반환합니다
+ * @param amount 보여줄 포스트의 수
+ * @returns Post[]
+ */
+export function getCurrentPosts(amount: number): Post[] {
+  const allPosts = getAllPosts();
+
+  return allPosts.slice(0, amount);
 }

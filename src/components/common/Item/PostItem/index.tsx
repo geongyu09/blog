@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
-import Gap from '../../layout/Gap';
-import Tag from '../../tag';
+import Gap from '@/components/common/layout/Gap';
 
 interface PostItemProps {
   title: string;
@@ -9,7 +7,7 @@ interface PostItemProps {
   date: string;
   href: string;
   image?: string;
-  tagString: string;
+  // tagString: string;
 }
 export default function PostItem({
   description,
@@ -17,9 +15,9 @@ export default function PostItem({
   href,
   title,
   image,
-  tagString,
+  // tagString,
 }: PostItemProps) {
-  const tags = tagString.split(' ');
+  // const tags = tagString.split(' ');
 
   return (
     <Link href={href}>
@@ -37,12 +35,13 @@ export default function PostItem({
           <h4 className="text-xl font-bold">{title}</h4>
           <Gap size={2} />
           <p>{description}</p>
-          <Gap size={4} />
+          {/* <Gap size={4} />
           <div>
-            {tags.map((tag, index) => (
+            {tags.map(() => (
               <Tag key={`${tag}-${index * 2}`} tag={tag} />
+              <div />
             ))}
-          </div>
+          </div> */}
 
           <Gap size={8} />
           <div className="flex justify-between">

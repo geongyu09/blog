@@ -1,11 +1,33 @@
 import { PropsWithChildren } from 'react';
+import { cva, VariantProps } from 'class-variance-authority';
+import cn from '@/utils/cn';
 
-interface SplitLayoutProps extends PropsWithChildren<{}> {
+const SplitLayoutVariants = cva(`grid`, {
+  variants: {
+    gridCols: {
+      default: 'grid-cols-[10fr,5fr]',
+    },
+    gap: {
+      md: 'gap-4',
+      lg: 'gap-16',
+      xl: 'gap-28',
+    },
+  },
+});
+
+interface SplitLayoutProps
+  extends PropsWithChildren,
+    VariantProps<typeof SplitLayoutVariants> {
   sidebar: React.ReactNode;
 }
-export default function SplitLayout({ children, sidebar }: SplitLayoutProps) {
+export default function SplitLayout({
+  children,
+  sidebar,
+  gridCols = 'default',
+  gap = 'md',
+}: SplitLayoutProps) {
   return (
-    <div className="grid grid-cols-[2fr_1fr] gap-4">
+    <div className={cn(SplitLayoutVariants({ gridCols, gap }))}>
       <div>{children}</div>
       <div>{sidebar}</div>
     </div>

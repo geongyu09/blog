@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss';
 
+const LAYOUT = require('./src/constants/layout').default;
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,7 +12,11 @@ const config: Config = {
     './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      minHeight: {
+        'fit-to-screen': `calc(100vh - ${LAYOUT.HEADER.height}px - ${LAYOUT.FOOTER.height}px)`,
+      },
+    },
   },
   plugins: [],
 };

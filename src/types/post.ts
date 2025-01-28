@@ -10,6 +10,7 @@ export interface RawPostData {
   description: string;
   thumbnail: string;
   tags: string; // 띄어쓰기로 구분되어진 하나의 문자열
+  timeStamps: number;
 }
 
 export interface PostData extends Omit<Post, 'tags'> {

@@ -3,7 +3,7 @@ import Gap from '@/components/common/layout/Gap';
 import Wrapper from '@/components/common/layout/Wrapper/indext';
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
 import SideTableOfContent from '@/components/feature/Post/SideTableOfContent';
-import { getPostBySlug, getPostSlugs } from '@/lib/post';
+import { getPostBySlug, getPostSlugs } from '@/lib/post/post';
 import MarkdownViewer from '@/service/Markdown';
 
 interface PageProps {

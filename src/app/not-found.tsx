@@ -2,10 +2,11 @@ import Link from 'next/link';
 
 import Gap from '@/components/common/layout/Gap';
 import Image from 'next/image';
+import ROUTE_PATH from '@/constants/path/routePath';
 
 export default function NotFound() {
   return (
-    <section className="flex flex-col items-center select-none h-screen">
+    <section className="flex flex-col items-center select-none h-fit-to-screen">
       <Gap size={5} />
       <Image
         src="/assets/404/codingCat.png"
@@ -22,7 +23,10 @@ export default function NotFound() {
       </p>
       <Gap size={5} />
 
-      <Link className="bg-indigo-500 text-white px-4 py-2 rounded-lg" href="/">
+      <Link
+        className="bg-indigo-500 text-white px-4 py-2 rounded-lg"
+        href={ROUTE_PATH.HOME}
+      >
         홈으로 가기
       </Link>
     </section>
