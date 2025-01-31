@@ -1,6 +1,7 @@
-import React from 'react';
 import cn from '@/utils/cn';
+import { getImagePath } from '@/utils/image';
 import Image from 'next/image';
+import React from 'react';
 
 interface ImgProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
@@ -14,7 +15,7 @@ export default function Img({
     <Image
       width={width ? Number(width) : 1000}
       height={height ? Number(height) : 1000}
-      src={src ?? ''}
+      src={getImagePath(src ?? '')}
       alt={alt ?? 'post content'}
       className={cn('my-14 w-full rounded-xl shadow-sm select-none')}
     />

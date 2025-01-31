@@ -1,3 +1,4 @@
+import { getImagePath } from '@/utils/image';
 import Link from 'next/link';
 import Gap from '../layout/Gap';
 
@@ -33,7 +34,7 @@ export default function Embed({
       <div
         className="bg-slate-100"
         style={{
-          backgroundImage: `url(${image})`,
+          backgroundImage: `url(${getImagePath(image ?? '')})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

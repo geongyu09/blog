@@ -1,19 +1,20 @@
 /** @type {import('next').NextConfig} */
-const isDev = process.env.NEXT_PUBLIC_ENVIRONMENT === 'DEVELOPMENT';
+const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === 'PRODUCTION';
 
 const nextConfig = {
   trailingSlash: true,
 
-  ...(isDev
-    ? {}
-    : {
+  ...(isProd
+    ? {
         // 프로덕션 환경 설정
         output: 'export',
         images: {
           unoptimized: true,
+          path: '/blog',
         },
         basePath: '/blog',
-      }),
+      }
+    : {}),
 };
 
 export default nextConfig;
