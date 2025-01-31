@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/geongyu09-blog',
+  basePath: '/blog',
 };
 
 export default nextConfig;
