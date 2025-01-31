@@ -1,7 +1,8 @@
 const ROUTE_PATH = {
   HOME: '/',
   ABOUT: '/about',
-  POSTS: ({ tag }: { tag?: string }) => `/posts${tag ? `?tag=${tag}` : ''}`,
+  POSTS: (prop?: { tag?: string }) =>
+    `/posts${prop?.tag ? `/${prop.tag}` : ''}`,
   POST_DETAIL: ({ slug }: { slug: string }) => `/post/${slug}`,
 };
 

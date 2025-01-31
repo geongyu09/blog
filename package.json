@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "deploy": "next build && touch out/.nojekyll"
+    "deploy": "NEXT_PUBLIC_ENVIRONMENT=PRODUCTION next build && touch out/.nojekyll && pnpm dlx gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

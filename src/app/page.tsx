@@ -1,18 +1,14 @@
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
-import Tag from '@/components/common/tag';
-import HomeBannerSection from '@/components/feature/Home/HomeBannerSection';
-import Link from 'next/link';
-import CurrentPostsSection from '@/components/feature/Home/CurrentPostsSection';
 import SideBarMenu from '@/components/common/SideBarMenu';
 import TagsSection from '@/components/common/TagsSection';
+import CurrentPostsSection from '@/components/feature/Home/CurrentPostsSection';
+import HomeBannerSection from '@/components/feature/Home/HomeBannerSection';
 import ROUTE_PATH from '@/constants/path/routePath';
+import Link from 'next/link';
 
-interface HomeProps {
-  searchParams: { tag?: string };
-}
-export default function Home({ searchParams: { tag } }: HomeProps) {
+export default function Home() {
   return (
     <>
       <HomeBannerSection />
@@ -22,17 +18,6 @@ export default function Home({ searchParams: { tag } }: HomeProps) {
 
         <h2 className="text-2xl font-bold">최근 포스트</h2>
         <Gap size={4} />
-
-        {tag && (
-          <>
-            <div className="flex items-center gap-4">
-              <Link href="/">x</Link>
-              <p className="font-semibold">필터 : </p>
-              <Tag tag={tag} />
-            </div>
-            <Gap size={8} />
-          </>
-        )}
 
         <SplitLayout
           sidebar={

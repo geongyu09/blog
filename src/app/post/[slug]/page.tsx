@@ -47,8 +47,6 @@ export default function Page({ params: { slug } }: PageProps) {
 export function generateStaticParams() {
   const slugs = getPostSlugs();
   return slugs.map((slug) => ({
-    params: {
-      slug,
-    },
+    slug: slug.replace('.md', ''),
   }));
 }
