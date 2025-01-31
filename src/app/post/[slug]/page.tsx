@@ -46,6 +46,7 @@ export default function Page({ params: { slug } }: PageProps) {
 
 export function generateStaticParams() {
   const slugs = getPostSlugs();
+  console.log('Generated slugs:', slugs); // 디버깅을 위한 로그
   return slugs.map((slug) => ({
     params: {
       slug,
