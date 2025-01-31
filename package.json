@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "deploy": "NEXT_PUBLIC_ENVIRONMENT=PRODUCTION next build && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "NEXT_PUBLIC_ENVIRONMENT=PRODUCTION next build && touch out/.nojekyll && pnpm dlx gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
