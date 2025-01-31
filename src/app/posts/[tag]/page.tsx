@@ -47,7 +47,7 @@ export default function PostFilteredPage({
 export function generateStaticParams() {
   const allTags = getAllTags();
   const params = allTags.map((tag) => ({
-    params: { tag: decodeURIComponent(tag) },
+    tag: decodeURIComponent(tag),
   }));
   return params;
 }
