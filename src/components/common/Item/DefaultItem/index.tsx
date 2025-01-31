@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import Gap from '@/components/common/layout/Gap';
+import { getImagePath } from '@/utils/image';
+import Link from 'next/link';
 
 interface DefaultItemProps {
   title: string;
@@ -31,7 +32,7 @@ export default function DefaultItem({
           <div
             className="rounded-lg border w-40 h-24 shrink-0"
             style={{
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(${getImagePath(image)})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

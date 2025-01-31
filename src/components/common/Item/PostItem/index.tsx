@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import Gap from '@/components/common/layout/Gap';
+import { getImagePath } from '@/utils/image';
+import Link from 'next/link';
 
 interface PostItemProps {
   title: string;
@@ -23,9 +24,9 @@ export default function PostItem({
     <Link href={href}>
       <article className="group cursor-pointer select-none rounded-lg transition w-full overflow-hidden shadow-sm hover:shadow-lg">
         <div
-          className="bg-slate-100 w-[600] h-96 "
+          className="bg-slate-100 w-[600] h-96"
           style={{
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(${getImagePath(image ?? '')})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
