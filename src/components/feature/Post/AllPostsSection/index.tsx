@@ -1,20 +1,19 @@
 import DefaultItem from '@/components/common/item/DefaultItem';
 import ROUTE_PATH from '@/constants/path/routePath';
-import { getAllPosts } from '@/lib/post/post';
+import { getAllPosts, getFilteredPostsByTag } from '@/lib/post/post';
 import { Post } from '@/types/post';
 
 interface PostsProps {
   filteredTag?: string;
 }
+
 export default function AllPostsSection({ filteredTag }: PostsProps) {
   const allPosts = getAllPosts();
 
   let filteredPosts: Post[] = [];
 
   if (filteredTag)
-    filteredPosts = allPosts.filter(
-      ({ data: { tags } }) => tags.indexOf(filteredTag) !== -1,
-    );
+    filteredPosts = getFilteredPostsByTag(decodeURIComponent(filteredTag));
   else filteredPosts = allPosts;
 
   return (
