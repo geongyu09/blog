@@ -1,6 +1,6 @@
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
-import Wrapper from '@/components/common/layout/Wrapper/indext';
+import Wrapper from '@/components/common/layout/Wrapper';
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
 import SideTableOfContent from '@/components/feature/Post/SideTableOfContent';
 import { getPostBySlug, getPostSlugs } from '@/lib/post/post';
