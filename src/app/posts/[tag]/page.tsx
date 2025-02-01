@@ -17,6 +17,7 @@ interface PostFilteredPageProps {
 export default function PostFilteredPage({
   params: { tag },
 }: PostFilteredPageProps) {
+  const decodedTag = decodeURIComponent(tag);
   return (
     <Container>
       <Gap size={14} />
@@ -26,7 +27,7 @@ export default function PostFilteredPage({
       <div className="flex items-center gap-4">
         <Link href={ROUTE_PATH.POSTS()}>x</Link>
         <p className="font-semibold">필터 : </p>
-        <Tag tag={decodeURIComponent(tag)} />
+        <Tag tag={decodedTag} />
       </div>
       <Gap size={8} />
 
