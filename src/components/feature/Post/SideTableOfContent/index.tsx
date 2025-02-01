@@ -23,7 +23,7 @@ export default function SideTableOfContent({
           <div className="absolute top-0 right-0 w-full transition-all duration-300 ease-in-out opacity-0 invisible group-hover:opacity-100 group-hover:visible">
             <MarkdownNav
               markdown={content}
-              className="bg-white rounded-xl border p-4 shadow-md"
+              className="bg-white rounded-xl border p-4 shadow-md max-h-96 overflow-y-auto scrollbar-hidden overscroll-contain"
             />
           </div>
         </div>
