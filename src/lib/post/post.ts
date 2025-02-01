@@ -42,6 +42,17 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
+/**
+ * @description 인자로 주어진 태그에 해당하는 포스트들을 반환합니다.
+ * @param tag 태그
+ * @returns Post[]
+ */
+export function getFilteredPostsByTag(tag: string): Post[] {
+  const allPosts = getAllPosts();
+
+  return allPosts.filter((post) => post.data.tags.includes(tag));
+}
+
 export function getAllTags() {
   const allPosts = getAllPosts();
 
