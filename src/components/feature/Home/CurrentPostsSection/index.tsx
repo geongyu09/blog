@@ -1,4 +1,4 @@
-import PostItem from '@/components/common/item/PostItem';
+import PostItem from '@/components/common/Item/PostItem';
 import ROUTE_PATH from '@/constants/path/routePath';
 import { getCurrentPosts } from '@/lib/post/post';
 

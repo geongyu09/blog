@@ -1,4 +1,4 @@
-import DefaultItem from '@/components/common/item/DefaultItem';
+import DefaultItem from '@/components/common/Item/DefaultItem';
 import ROUTE_PATH from '@/constants/path/routePath';
 import { getAllPosts, getFilteredPostsByTag } from '@/lib/post/post';
 import { Post } from '@/types/post';
