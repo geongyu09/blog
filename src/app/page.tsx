@@ -1,3 +1,4 @@
+import DefaultButton from '@/components/common/Button/DefaultButton';
 import Container from '@/components/common/layout/Container';
 import Gap from '@/components/common/layout/Gap';
 import SplitLayout from '@/components/common/layout/SplitLayout';
@@ -30,11 +31,8 @@ export default function Home() {
           <>
             <CurrentPostsSection amount={3} />
             <Gap size={8} />
-            <Link
-              href={ROUTE_PATH.POSTS({})}
-              className="py-4 text-center block bg-slate-100 rounded-md text-slate-900 font-semibold"
-            >
-              전체 포스트 보기
+            <Link href={ROUTE_PATH.POSTS({})}>
+              <DefaultButton text="전체 포스트 보기" />
             </Link>
           </>
         </SplitLayout>
