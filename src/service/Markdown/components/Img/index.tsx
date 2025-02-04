@@ -1,5 +1,4 @@
 import cn from '@/utils/cn';
-import { getImagePath } from '@/utils/image';
 import Image from 'next/image';
 import React from 'react';
 
@@ -15,7 +14,7 @@ export default function Img({
     <Image
       width={width ? Number(width) : 1000}
       height={height ? Number(height) : 1000}
-      src={getImagePath(src ?? '')}
+      src={src ?? ''}
       alt={alt ?? 'post content'}
       className={cn('my-14 w-full rounded-xl shadow-sm select-none')}
     />

@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import Gap from '@/components/common/layout/Gap';
 import ROUTE_PATH from '@/constants/path/routePath';
-import { getImagePath } from '@/utils/image';
 import Image from 'next/image';
 
 export default function NotFound() {
@@ -11,7 +10,7 @@ export default function NotFound() {
   return (
     <section className="flex flex-col items-center select-none h-fit-to-screen">
       <Gap size={5} />
-      <Image src={getImagePath(codingCat)} alt="404" width={900} height={300} />
+      <Image src={codingCat} alt="404" width={900} height={300} />
       <Gap size={10} />
       <h2 className="text-4xl font-semibold">404 - Not Found</h2>
       <Gap size={1} />

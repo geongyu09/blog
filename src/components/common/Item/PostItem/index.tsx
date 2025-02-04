@@ -1,5 +1,4 @@
 import Gap from '@/components/common/layout/Gap';
-import { getImagePath } from '@/utils/image';
 import Link from 'next/link';
 
 interface PostItemProps {
@@ -26,7 +25,7 @@ export default function PostItem({
         <div
           className="bg-slate-100 w-[600] h-96"
           style={{
-            backgroundImage: `url(${getImagePath(image ?? '')})`,
+            backgroundImage: `url(${image ?? ''})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
