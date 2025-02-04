@@ -4,6 +4,7 @@ import Wrapper from '@/components/common/layout/Wrapper';
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
 import SideTableOfContent from '@/components/feature/Post/SideTableOfContent';
 import { getPostBySlug, getPostSlugs } from '@/lib/post/post';
+import Comment from '@/service/Comment';
 import MarkdownViewer from '@/service/Markdown';
 
 interface PageProps {
@@ -38,6 +39,12 @@ export default function Page({ params: { slug } }: PageProps) {
         <MarkdownNav markdown={content} />
         <hr />
         <MarkdownViewer markdown={content} />
+
+        <Gap size={12} />
+        <hr />
+        <Gap size={12} />
+
+        <Comment />
       </Wrapper>
       <SideTableOfContent content={content} />
     </Container>
