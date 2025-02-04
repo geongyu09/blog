@@ -10,9 +10,7 @@ const nextConfig = {
         output: 'export',
         images: {
           unoptimized: true,
-          path: '/blog',
         },
-        basePath: '/blog',
       }
     : {}),
 };
