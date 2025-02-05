@@ -14,19 +14,21 @@ export default function Home() {
     <>
       <HomeBannerSection />
       <Gap size={12} />
-      <Container>
+      <Container responsive="default">
         <Gap size={12} />
 
         <h2 className="text-2xl font-bold">최근 포스트</h2>
         <Gap size={4} />
 
         <SplitLayout
+          gap="xl"
+          // styles="grid-cols-1 lg:grid-cols-[10fr,5fr]"
+          responsive="default"
           sidebar={
             <SideBarMenu>
               <TagsSection />
             </SideBarMenu>
           }
-          gap="xl"
         >
           <>
             <CurrentPostsSection amount={3} />
