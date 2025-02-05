@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import Header from '@/components/feature/layout/Header';
-import { PropsWithChildren } from 'react';
-import ModalProvider from '@/lib/modal/provider';
 import Footer from '@/components/feature/layout/Footer';
+import Header from '@/components/feature/layout/Header';
+import ModalProvider from '@/lib/modal/provider';
+import Analytics from '@/service/Analytics';
+import type { Metadata } from 'next';
+import { PropsWithChildren } from 'react';
 import Gap from '../components/common/layout/Gap/index';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: '건규의 블로그 | Blog',
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
   return (
     <html lang="ko">
+      <head>
+        <Analytics />
+      </head>
       <ModalProvider>
         <body>
           <Header />
