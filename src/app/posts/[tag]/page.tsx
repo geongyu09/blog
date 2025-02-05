@@ -19,7 +19,7 @@ export default function PostFilteredPage({
 }: PostFilteredPageProps) {
   const decodedTag = decodeURIComponent(tag);
   return (
-    <Container>
+    <Container responsive="default">
       <Gap size={14} />
       <h2 className="text-4xl font-bold text-center">전체 포스트들</h2>
       <Gap size={24} />
@@ -32,12 +32,14 @@ export default function PostFilteredPage({
       <Gap size={8} />
 
       <SplitLayout
+        responsive="reverse"
+        responsiveGap="xl"
+        gap="xl"
         sidebar={
           <SideBarMenu>
             <TagsSection />
           </SideBarMenu>
         }
-        gap="xl"
       >
         <AllPostsSection filteredTag={tag} />
       </SplitLayout>
