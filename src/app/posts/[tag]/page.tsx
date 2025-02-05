@@ -32,7 +32,7 @@ export default function PostFilteredPage({
       <Gap size={8} />
 
       <SplitLayout
-        responsive="reverse"
+        gridCols="responsiveReverse"
         responsiveGap="xl"
         gap="xl"
         sidebar={

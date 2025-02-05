@@ -21,9 +21,9 @@ export default function Home() {
         <Gap size={4} />
 
         <SplitLayout
+          gridCols="responsive"
+          responsiveGap="xl"
           gap="xl"
-          // styles="grid-cols-1 lg:grid-cols-[10fr,5fr]"
-          responsive="default"
           sidebar={
             <SideBarMenu>
               <TagsSection />

@@ -5,17 +5,15 @@ import { PropsWithChildren } from 'react';
 const SplitLayoutVariants = cva(`grid`, {
   variants: {
     gridCols: {
+      none: '',
       default: 'grid-cols-[10fr,5fr]',
+      responsive: 'grid-cols-1 lg:grid-cols-[10fr,5fr]',
+      responsiveReverse: 'grid-cols-1 lg:grid-cols-[10fr,5fr]',
     },
     gap: {
       md: 'gap-4',
       lg: 'gap-16',
       xl: 'gap-28',
-    },
-    responsive: {
-      none: '',
-      default: 'grid-cols-1 lg:grid-cols-[10fr,5fr]',
-      reverse: 'grid-cols-1 lg:grid-cols-[10fr,5fr]',
     },
     responsiveGap: {
       none: '',
@@ -35,23 +33,30 @@ interface SplitLayoutProps
 export default function SplitLayout({
   children,
   sidebar,
-  gridCols = 'default',
+  gridCols,
   gap = 'md',
   styles,
-  responsive,
   responsiveGap,
 }: SplitLayoutProps) {
   return (
     <div
       className={cn(
-        SplitLayoutVariants({ gridCols, gap, responsive, responsiveGap }),
+        SplitLayoutVariants({ gridCols, gap, responsiveGap }),
         styles,
       )}
     >
-      <div className={responsive === 'reverse' ? 'order-2 lg:order-none' : ''}>
+      <div
+        className={
+          gridCols === 'responsiveReverse' ? 'order-2 lg:order-none' : ''
+        }
+      >
         {children}
       </div>
-      <div className={responsive === 'reverse' ? 'order-1 lg:order-none' : ''}>
+      <div
+        className={
+          gridCols === 'responsiveReverse' ? 'order-1 lg:order-none' : ''
+        }
+      >
         {sidebar}
       </div>
     </div>
