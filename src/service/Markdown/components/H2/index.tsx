@@ -21,7 +21,7 @@ export default function H2({
       <h5
         id={headerId}
         className={cn(
-          'text-2xl font-bold mt-12 mb-8 scroll-mt-20',
+          'text-2xl font-bold mt-10 mb-6 scroll-mt-20',
           'hover:opacity-80',
           className,
         )}

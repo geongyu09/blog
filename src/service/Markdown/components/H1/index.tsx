@@ -23,7 +23,7 @@ export default function H1({
       <h4
         id={headerId}
         className={cn(
-          'text-3xl font-bold mt-12 mb-8 scroll-mt-20',
+          'text-3xl font-bold mt-10 mb-8 scroll-mt-20',
           'hover:opacity-80 hover:',
           className,
         )}

@@ -21,7 +21,7 @@ export default function H3({
       <h6
         id={headerId}
         className={cn(
-          'text-2xl font-bold mt-12 mb-8 scroll-mt-20',
+          'text-xl font-bold mt-10 mb-4 scroll-mt-20',
           'hover:opacity-80',
           className,
         )}
