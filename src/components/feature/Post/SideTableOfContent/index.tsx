@@ -2,16 +2,30 @@
 
 import MarkdownNav from '@/components/common/lib/MarkdownNav';
 import ShortTableOfContent from '@/components/common/lib/ShortTableOfContent';
+import cn from '@/utils/cn';
+import { cva, VariantProps } from 'class-variance-authority';
 
-interface SideTableOfContentProps {
+const SideTabOfContentVariants = cva('fixed top-64 right-0 w-64', {
+  variants: {
+    responsive: {
+      none: '',
+      default: 'hidden lg:block',
+      hide: 'hidden lg:block',
+    },
+  },
+});
+
+interface SideTableOfContentProps
+  extends VariantProps<typeof SideTabOfContentVariants> {
   content: string;
 }
 
 export default function SideTableOfContent({
   content,
+  responsive = 'default',
 }: SideTableOfContentProps) {
   return (
-    <div className="fixed top-64 right-0 w-64">
+    <div className={cn(SideTabOfContentVariants({ responsive }))}>
       <div className="relative">
         {/* Short TOC */}
         <div className="relative group">
