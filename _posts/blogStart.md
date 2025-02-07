@@ -1,6 +1,6 @@
 ---
 title: 블로그를 만들어야겠다..!
-date: '2024-03-16T05:35:07.322Z'
+date: '2024년 03월 16일'
 description: '이 사이트를 만들게 된 동기 및 기획 내용을 담고 있습니다!'
 thumbnail: '/assets/blog/blogStart/Untitled.png'
 tags: 'next.js coding concept'
