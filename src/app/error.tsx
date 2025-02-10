@@ -1,5 +1,6 @@
 'use client';
 
+import DefaultButton from '@/components/common/Button/DefaultButton';
 import Gap from '@/components/common/layout/Gap';
 import ROUTE_PATH from '@/constants/path/routePath';
 import Link from 'next/link';
@@ -40,13 +41,12 @@ export default function Error({
       </p>
       <Gap size={12} />
 
-      <button
-        type="button"
-        className="bg-indigo-500 text-white px-4 py-2 rounded-lg"
+      <DefaultButton
+        text="다시 시도하기"
         onClick={reset}
-      >
-        다시 시도하기
-      </button>
+        theme="primary"
+        widthStyle="auto"
+      />
 
       <Gap size={4} />
       <Link href={ROUTE_PATH.HOME}>홈으로 가기</Link>
