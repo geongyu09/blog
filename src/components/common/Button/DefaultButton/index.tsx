@@ -2,13 +2,13 @@ import cn from '@/utils/cn';
 import { cva, VariantProps } from 'class-variance-authority';
 
 const DefaultButtonVariants = cva(
-  `py-4 text-center block bg-slate-100 rounded-md text-slate-900 font-semibold hover:bg-slate-200 transition-all`,
+  `py-4 text-center block bg-slate-100 rounded-md text-slate-900 font-semibold transition-all`,
   {
     variants: {
       theme: {
-        default: 'bg-gray-500 text-white hover:bg-slate-200',
+        default: 'bg-slate-100 hover:bg-slate-200',
         primary: 'bg-indigo-500 text-white hover:bg-indigo-400',
-        secondary: 'bg-gray-500 text-white hover:bg-slate-200',
+        secondary: 'bg-slate-100 hover:bg-slate-200',
       },
       widthStyle: {
         default: 'w-full',
